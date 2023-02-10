@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="tsm_count_author_books_form" model="ir.ui.view">
+            <field name="name">tsm.count.author.books.form</field>
+            <field name="model">tsm.count.author.books</field>
+            <field name="arch" type="xml">
+                <form string="Model Description">
+                    <header>
+                        <button name="button_author_calculate" string="Calcular cantidad libros" type="object"/>
+                    </header>
+                    <sheet>
+                        <field name="author_line" readonly = "1">
+                            <tree>
+                                <field name="name_author_id"/>
+                                <field name="qty"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tsm_count_author_books_tree" model="ir.ui.view">
+            <field name="name">tsm.count.author.books.tree</field>
+            <field name="model">tsm.count.author.books</field>
+            <field name="arch" type="xml">
+                <tree string="Autor Contador">
+                    <field name="author_line" />
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <data>    
+
+     <menuitem id="library_root" name="BIBLIOTECA" sequence="5" web_icon = "tsm_library,static/description/book_icon.png"/>
+     <menuitem id="books_main" parent="library_root" name="Libros" sequence="5"/>
+
+     
+     
+     <record id="books_action" model="ir.actions.act_window">
+         <field name="name">Libros</field>
+         <field name="res_model">tsm.books</field>
+         <field name="view_type">form</field>
+         <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="books_menu" action="books_action" parent="books_main" name="Libros" sequence="5"/>
+        
+        
+        <record id="score_action" model="ir.actions.act_window">
+            <field name="name">Calificaciones</field>
+            <field name="res_model">tsm.score</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        <menuitem id="books_menu_score" action="score_action" parent="books_main" name="Calificaciones" sequence="5"/>
+
+
+     
+     <record id="author_action" model="ir.actions.act_window">
+         <field name="name">Autores</field>
+         <field name="res_model">tsm.author</field>
+         <field name="view_type">form</field>
+         <field name="view_mode">tree,form</field>
+     </record>
+ 
+    <menuitem id="author_menu" action="author_action" parent="library_root" name="Author" sequence="5"/>
+     
+    
+    <record id="books_count_action" model="ir.actions.act_window">
+         <field name="name">Contador Genero</field>
+         <field name="res_model">tsm.count.books</field>
+         <field name="view_type">form</field>
+         <field name="view_mode">tree,form</field>
+     </record>
+ 
+    <menuitem id="books_count_menu" action="books_count_action" parent="library_root" name="Contador Libros" sequence="5"/>
+
+       
+    <record id="count_author_books_action" model="ir.actions.act_window">
+        <field name="name">Contador Libros</field>
+        <field name="res_model">tsm.count.author.books</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+   <menuitem id="books_author_count_menu" action="count_author_books_action" parent="library_root" name="Author Libros" sequence="5"/>
+
+ </data>
+</odoo>

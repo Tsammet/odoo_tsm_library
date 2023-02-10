@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="tsm_count_books_form" model="ir.ui.view">
+            <field name="name">tsm.count.books.form</field>
+            <field name="model">tsm.count.books</field>
+            <field name="arch" type="xml">
+                <form string="Model Description">
+                    <header>
+                        <button name="button_calculate" string="Calcular Genero Libro" type="object"/>
+                    </header>
+                    <sheet>
+                        <field name="book_line" readonly = "1">
+                            <tree>
+                                <field name="genre"/>
+                                <field name="qty"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tsm_count_books_tree" model="ir.ui.view">
+            <field name="name">tsm.count.books.tree</field>
+            <field name="model">tsm.count.books</field>
+            <field name="arch" type="xml">
+                <tree string="Contador">
+                    <field name="book_line" />
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

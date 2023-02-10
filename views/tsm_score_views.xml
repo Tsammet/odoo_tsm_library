@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <data>    
+
+    
+    
+    <record id="tsm_score_tree" model="ir.ui.view">
+        <field name="name">tsm.score.tree</field>
+        <field name="model">tsm.score</field>
+        <field name="arch" type="xml">
+            
+            <tree string="Model Description" editable='bottom'>
+                <field name="book_id"/>
+                <field name="user_id"/>
+                <field name="score"/>
+            </tree>
+
+        </field>
+    </record>
+    
+ </data>
+</odoo>

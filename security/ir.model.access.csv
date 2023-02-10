@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tsm_books,access_tsm_books,model_tsm_books,base.group_user,1,1,1,1 
+access_tsm_author,access_tsm_author,model_tsm_author,base.group_user,1,1,1,1 
+access_tsm_score,access_tsm_score,model_tsm_score,base.group_user,1,1,1,1
+access_tsm_count_books_line,access_tsm_count_books_line,model_tsm_count_books_line,base.group_user,1,1,1,1
+access_tsm_count_books,access_tsm_count_books,model_tsm_count_books,base.group_user,1,1,1,1
+access_tsm_count_author_books,access_tsm_count_author_books,model_tsm_count_author_books,base.group_user,1,1,1,1 
+access_tsm_count_author_books_line,access_tsm_count_author_books_line,model_tsm_count_author_books_line,base.group_user,1,1,1,1

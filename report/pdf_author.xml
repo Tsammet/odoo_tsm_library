@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="tsm_author">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                        <div align="center" style="margin-top:0mm">
+                            <h4>
+                                <strong>
+                                <h1>
+                                    <span t-field="o.name" style="text-align:center" />
+                                </h1>   
+                                </strong>
+                            </h4>
+                        </div>
+                        <br />
+                        <br />
+
+                        <h6 style="text-align:left">
+                            <strong>INFORMACIÓN DEL AUTOR</strong>
+                        </h6>
+
+                        <h7>
+                            <strong>Nombre:</strong>
+                            <small>
+                                <span t-field="o.name" />
+                                <br />
+                            </small>
+                        </h7>
+
+                        <t>
+
+                            <h7>
+                                <strong>FECHA NACIMIENTO:</strong>
+                                <small>
+                                    <span t-field="o.birth_date" />
+                                </small>
+                                <br />
+                            </h7>
+                        </t>
+
+                        <t t-if="o.death_date">
+                            <h7>
+                                <strong>FECHA MUERTE:</strong>
+                                <small>
+                                    <span t-field="o.death_date" />
+                                </small>
+                                <br />
+                            </h7>
+                        </t>
+                        <br />
+                        <br />
+
+                        <div class="row">
+                            <table class="table table-sm o_main_table">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:center">
+                                            <b>Fecha Publicación</b>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <b>Libro</b>
+                                        </th>
+                                        <th style="text-align:center">
+                                            <b>Genero</b>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach='o.book_id' t-as='b'>
+                                        <tr>
+
+                                            <td style="text-align:left">
+                                                <span t-field="b.date" />
+                                            </td>
+                                            <td style="text-align:left">
+                                                <span t-field="b.book_name" />
+                                            </td>
+                                            <td style="text-align:left">
+                                                <span t-field="b.genre" />
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="action_tsm_author_pdf"
+            model="tsm.author"
+            string="Report description"
+            menu="True"
+            report_type="qweb-pdf"
+            name="tsm_library.tsm_author"
+            file="tsm_library.tsm_author"
+        />
+    </data>
+</odoo>

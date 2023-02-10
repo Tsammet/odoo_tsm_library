@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <data>    
+    <record id="tsm_books_form" model="ir.ui.view">
+        <field name="name">tsm.books.form</field>
+        <field name="model">tsm.books</field>
+        <field name="arch" type="xml">
+            <form string="Model Description">
+                <header>
+                    <button name="score_average" string="Calcular" type="object"/>
+                    <button name="button_abierto" string="Abierto" type="object" states="CERRADO"/>
+                    <button name="button_cerrado" string="Cerrado" type="object" states="ABIERTO"/>
+                    <field name="state" widget="statusbar"/>
+
+                </header>
+
+                
+                <sheet>
+
+                    <div class="oe_title">
+                        <div class="oe_button_box">
+                            <button name="button_reasign" class="oe_stat_button"  icon="fa-user"
+                                string="Reasignar datos" type="object" states="CERRADO" />
+                        </div>
+                    </div>
+
+                    <group col="3">
+
+                        <group>
+                            <field name="book_name" attrs="{'readonly':[('state', '=', 'CERRADO')]}"/>
+                            <field name="author_id" attrs="{'readonly':[('state', '=', 'CERRADO')]}"/>
+                        </group>
+
+                        <group>
+                            <field name="genre" attrs="{'readonly':[('state', '=', 'CERRADO')]}"/>
+                            <field name="total_books"/>
+                        </group>
+                        
+                        <group>
+                            <field name="date"/>
+                            <field name="adjunto"/>
+                        </group>
+                        
+                    </group>
+                    <group>
+
+                        <field name="score"/>
+
+                    </group>
+                    <group>
+
+                        <field name="average"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    
+    <record id="tsm_books_tree" model="ir.ui.view">
+        <field name="name">tsm.books.tree</field>
+        <field name="model">tsm.books</field>
+        <field name="arch" type="xml">
+
+            <tree string="Model Description">
+                <field name="book_name"/>
+                <field name="date"/>
+                <field name="genre"/>
+                <field name="author_id"/>
+            </tree>
+
+        </field>
+    </record>
+    
+    
+    <record id="tsm_reasign_data" model="ir.ui.view">
+        <field name="name">reasign.data.form</field>
+        <field name="model">reasign.data</field>
+        <field name="arch" type="xml">
+            <form string="Reasignacion Información">
+                <group>
+                    <group>
+                        <field name="old_author"  readonly= "1"/>
+                        <field name="new_author" />
+                    </group>
+                    <group>
+                        <field name="old_genre" readonly="1" />
+                        <field name="new_genre" />
+                    </group>
+                </group>
+                <footer>
+                    <button name="do_reasign" string="Reasignar" type="object"
+                        class="oe_highlight" />
+                </footer>
+
+            </form>
+        </field>
+
+
+    </record>
+
+ </data>
+</odoo>
